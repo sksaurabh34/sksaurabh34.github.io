@@ -11,6 +11,7 @@ body {
   margin: 0;
   background: #f4f4f4;
   transition: 0.3s;
+  overflow-x: hidden;
 }
 
 header {
@@ -41,16 +42,18 @@ nav a {
   border-radius: 10px;
 }
 
+/* HEADINGS */
 h2 { color: #002147; }
 h3 { color: #003366; margin-top: 2rem; }
 
-/* PROFILE */
-.flex {
+/* FLEX LAYOUT */
+.flex, .research-flex {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
 
+/* PROFILE */
 .profile-photo {
   width: 180px;
   height: 180px;
@@ -59,19 +62,20 @@ h3 { color: #003366; margin-top: 2rem; }
   border: 4px solid #003366;
 }
 
-/* RESEARCH IMAGE TEXT */
-.research-flex {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin-top: 1rem;
-}
-
+/* RESEARCH IMAGE */
 img.hero {
   width: 350px;
-  height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* IMPACT BOX */
+.impact-box {
+  background: #eef4ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border-left: 5px solid #003366;
 }
 
 /* HIGHLIGHT CARDS */
@@ -103,29 +107,38 @@ img.hero {
   border-radius: 10px;
 }
 
-.highlight-card h4 {
-  margin: 0;
-  color: #002147;
+/* PUBLICATIONS */
+.pub-list p {
+  padding: 10px;
+  border-left: 4px solid #003366;
+  background: #f9f9f9;
+  margin-bottom: 10px;
 }
 
-.highlight-card p {
-  margin: 6px 0;
-  font-size: 0.9rem;
-  color: #333;
+/* TIMELINE */
+.timeline {
+  border-left: 3px solid #003366;
+  margin-top: 20px;
+  padding-left: 20px;
 }
 
-.pub-link a {
-  font-size: 0.85rem;
-  color: #003366;
-  font-weight: bold;
-  text-decoration: none;
+.timeline-item {
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.pub-link a:hover {
-  text-decoration: underline;
+.timeline-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #003366;
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  border-radius: 50%;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .button {
   display: inline-block;
   padding: 10px 18px;
@@ -133,7 +146,6 @@ img.hero {
   color: white;
   border-radius: 6px;
   text-decoration: none;
-  margin-top: 10px;
 }
 
 /* DARK MODE */
@@ -155,12 +167,11 @@ img.hero {
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .flex, .research-flex {
+  .flex, .research-flex, .highlight-card {
     flex-direction: column;
     text-align: center;
   }
@@ -203,8 +214,8 @@ function toggleDarkMode() {
     <div>
       <h2>About Me</h2>
       <p>
-        Postdoctoral Researcher working on stereodynamics of molecule–surface interactions,
-        quantum-state resolved scattering, and gas–surface reaction dynamics.
+        Postdoctoral Researcher in surface dynamics, molecular scattering,
+        and gas–surface reaction mechanisms.
       </p>
     </div>
   </div>
@@ -213,36 +224,41 @@ function toggleDarkMode() {
 <!-- RESEARCH -->
 <div class="container" id="research">
 
-  <h2>Broad Research Overview</h2>
+  <h2>Research Overview</h2>
 
   <div class="research-flex">
     <img src="mol_surface_interaction.png" class="hero">
-
     <div>
       <p>
-        My research is divided into two main areas: CO₂ dissociation on metal surfaces and the development of advanced diagnostic tools.
+        My research is divided into CO₂ dissociation on metal surfaces and development of advanced diagnostic tools.
       </p>
     </div>
+  </div>
+
+  <div class="impact-box">
+    <h3>Key Research Impact</h3>
+    <ul>
+      <li>Measured CO₂ dissociation probability down to 10⁻⁵ range</li>
+      <li>Identified energy-dependent reaction pathways</li>
+      <li>Developed MHz-level laser stabilization systems</li>
+      <li>Built compact diagnostic instruments for surface science</li>
+    </ul>
   </div>
 
   <h3>Does CO₂ Dissociate on Low-Index Copper Surfaces?</h3>
 
   <div class="research-flex">
     <img src="Figure_TOC.png" class="hero">
-
     <div>
       <p>
-        This study investigates CO₂ dissociation on Cu surfaces under ultra-high vacuum (UHV) conditions. 
-        The work focuses on the dependence of reaction probability on incident energy, molecular orientation, and vibrational excitation.
+        CO₂ dissociation on Cu surfaces under UHV conditions with strong dependence on energy and orientation.
       </p>
 
       <p>
-        These results are important for heterogeneous catalysis and CO₂ reduction, providing insight into surface-specific reaction mechanisms.
+        <a class="button" href="CO2_publication.pdf">📄 View Publication</a>
       </p>
     </div>
   </div>
-
-</div>
 
   <h3>Development of Diagnostic Techniques</h3>
 
@@ -250,74 +266,75 @@ function toggleDarkMode() {
 
     <div class="highlight-card">
       <img src="wavemeter.png">
-      <div>
-        <h4>Wavemeter</h4>
-        <p>Fizeau interferometer-based high precision wavemeter.</p>
-        <div class="pub-link"><a href="#">Publication Link</a></div>
-      </div>
+      <div><b>Wavemeter</b><p>Fizeau interferometer-based system.</p></div>
     </div>
 
     <div class="highlight-card">
       <img src="he_ne_laser.png">
-      <div>
-        <h4>Ultra-stable Laser</h4>
-        <p>ppb stabilized He–Ne laser using feedback control.</p>
-        <div class="pub-link"><a href="#">Publication Link</a></div>
-      </div>
+      <div><b>Ultra-stable Laser</b><p>ppb stabilized He–Ne laser.</p></div>
     </div>
 
     <div class="highlight-card">
       <img src="interferometer.png">
-      <div>
-        <h4>Transfer Interferometer</h4>
-        <p>MHz-level laser stabilization system.</p>
-        <div class="pub-link"><a href="#">Publication Link</a></div>
-      </div>
+      <div><b>Interferometer</b><p>MHz stabilization system.</p></div>
     </div>
 
     <div class="highlight-card">
       <img src="spectrometer.png">
-      <div>
-        <h4>Spectrometer</h4>
-        <p>High sensitivity compact spectrometer.</p>
-        <div class="pub-link"><a href="#">Publication Link</a></div>
-      </div>
+      <div><b>Spectrometer</b><p>High sensitivity compact design.</p></div>
     </div>
 
     <div class="highlight-card">
       <img src="photoacoustic.png">
-      <div>
-        <h4>Photoacoustic Spectroscopy</h4>
-        <p>Detection of weak gas-phase transitions.</p>
-        <div class="pub-link"><a href="#">Publication Link</a></div>
-      </div>
+      <div><b>Photoacoustic</b><p>Weak transition detection.</p></div>
     </div>
 
     <div class="highlight-card">
       <img src="vmi.png">
-      <div>
-        <h4>Imaging Tools</h4>
-        <p>Velocity-map and spatial imaging systems.</p>
-        <div class="pub-link"><a href="#">Publication Link</a></div>
-      </div>
+      <div><b>Imaging Tools</b><p>Velocity-map imaging system.</p></div>
     </div>
 
     <div class="highlight-card">
       <img src="helium_source.png">
-      <div>
-        <h4>Helium Source</h4>
-        <p>Compact beam source for surface monitoring.</p>
-        <div class="pub-link"><a href="#">Publication Link</a></div>
-      </div>
+      <div><b>Helium Source</b><p>Compact beam source.</p></div>
     </div>
 
   </div>
 </div>
 
+<!-- TIMELINE -->
+<div class="container">
+  <h2>Research Timeline</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Postdoctoral Research</h3>
+      <p>Surface dynamics, stereodynamics, molecule–surface interactions.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>PhD Research</h3>
+      <p>CO₂ dissociation on Cu surfaces and vibrational effects.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Instrumentation Development</h3>
+      <p>Laser systems, wavemeter, spectroscopy tools.</p>
+    </div>
+  </div>
+</div>
+
 <!-- PUBLICATIONS -->
 <div class="container" id="publications">
-  <h2>Publications</h2>
-  <p><a class="button" href="Publication_list.pdf">⬇ Download Full List</a></p>
+  <h2>Selected Publications</h2>
+
+  <div class="pub-list">
+    <p><b>CO₂ dissociation on Cu surfaces</b><br><a href="#">DOI link</a></p>
+    <p><b>Surface scattering dynamics</b><br><a href="#">DOI link</a></p>
+    <p><b>Laser stabilization systems</b><br><a href="#">DOI link</a></p>
+  </div>
+
+  <a class="button" href="Publication_list.pdf">⬇ Full Publication List</a>
 </div>
 
 <!-- CV -->
