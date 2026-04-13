@@ -4,14 +4,68 @@
 <meta charset="UTF-8">
 <title>Saurabh Kumar Singh — Research Profile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-body {font-family: Arial, sans-serif; margin:0; background:#f4f4f4;}
-header {background:#002147; color:white; padding:2rem; text-align:center;}
-nav {background:#003366; text-align:center; padding:1rem;}
-nav a {color:white; margin:0 1rem; text-decoration:none; font-weight:bold;}
-.container {max-width:1100px; margin:2rem auto; padding:2rem; background:white; border-radius:10px;}
-h2 {color:#002147;}
-h3 {color:#003366; margin-top:2rem;}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+  transition: 0.3s;
+}
+
+header {
+  background: #002147;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+nav {
+  background: #003366;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+}
+
+h2 { color: #002147; }
+h3 { color: #003366; margin-top: 2rem; }
+
+/* PROFILE */
+.flex {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #003366;
+}
+
+/* RESEARCH IMAGE TEXT */
+.research-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
 
 img.hero {
   width: 350px;
@@ -20,46 +74,58 @@ img.hero {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.profile-photo {width:180px; height:180px; border-radius:50%; object-fit:cover; border:4px solid #003366;}
-.flex {display:flex; gap:2rem; align-items:center;}
+/* HIGHLIGHT CARDS */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
 
-.research-flex {
+.highlight-card {
   display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin-top: 1rem;
+  gap: 15px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: 0.2s;
 }
 
-.research-flex div {
-  line-height: 1.6;
+.highlight-card:hover {
+  transform: translateY(-3px);
 }
 
-.figure {
-  text-align: center;
+.highlight-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.caption {
+.highlight-card h4 {
+  margin: 0;
+  color: #002147;
+}
+
+.highlight-card p {
+  margin: 6px 0;
   font-size: 0.9rem;
-  color: #555;
-  margin-top: 8px;
+  color: #333;
 }
 
-ul li {
-  margin-bottom: 10px;
+.pub-link a {
+  font-size: 0.85rem;
+  color: #003366;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-@media (max-width: 768px) {
-  .research-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  img.hero {
-    width: 80%;
-  }
+.pub-link a:hover {
+  text-decoration: underline;
 }
 
-
+/* BUTTONS */
 .button {
   display: inline-block;
   padding: 10px 18px;
@@ -70,20 +136,7 @@ ul li {
   margin-top: 10px;
 }
 
-.button:hover {
-  background: #001f4d;
-}
-
-.badge {
-  display: inline-block;
-  background: #e6eef7;
-  color: #003366;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 5px 5px 0 0;
-  font-size: 0.85rem;
-}
-
+/* DARK MODE */
 .dark-mode {
   background: #121212;
   color: #e0e0e0;
@@ -104,11 +157,19 @@ ul li {
   border-radius: 5px;
   cursor: pointer;
 }
-</style>
-</head>
-<body>
 
-<button class="toggle-btn" onclick="toggleDarkMode()">🌙 Mode</button>
+/* MOBILE */
+@media (max-width: 768px) {
+  .flex, .research-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img.hero {
+    width: 80%;
+  }
+}
+</style>
 
 <script>
 function toggleDarkMode() {
@@ -116,92 +177,145 @@ function toggleDarkMode() {
 }
 </script>
 
+</head>
+
+<body>
+
+<button class="toggle-btn" onclick="toggleDarkMode()">🌙 Mode</button>
+
 <header>
-    <h1>Saurabh Kumar Singh</h1>
-    <p>Postdoctoral Researcher · Surface Dynamics Lab · Swansea University</p>
+  <h1>Saurabh Kumar Singh</h1>
+  <p>Postdoctoral Researcher · Surface Dynamics Lab · Swansea University</p>
 </header>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#research">Research</a>
+  <a href="#publications">Publications</a>
+  <a href="#cv">CV</a>
+  <a href="#contact">Contact</a>
 </nav>
 
+<!-- ABOUT -->
 <div class="container" id="about">
-    <div class="flex">
-        <img src="me.jpg" class="profile-photo">
-        <div>
-            <h2>About Me</h2>
-            <p>I am a Postdoctoral Researcher at Swansea University, working on magnetically controlled aligned and oriented H₂ reactive scattering on metal surfaces. My research focuses on stereodynamics, quantum-state–resolved molecule–surface interactions, and energy-transfer mechanisms in gas–surface reactions.</p>
-        </div>
+  <div class="flex">
+    <img src="me.jpg" class="profile-photo">
+    <div>
+      <h2>About Me</h2>
+      <p>
+        Postdoctoral Researcher working on stereodynamics of molecule–surface interactions,
+        quantum-state resolved scattering, and gas–surface reaction dynamics.
+      </p>
     </div>
+  </div>
 </div>
 
+<!-- RESEARCH -->
 <div class="container" id="research">
-    <h2>Research Overview</h2>
+  <h2>Research Overview</h2>
 
-    <p>
-    My research is broadly divided into two major areas: understanding CO₂ dissociation on metal surfaces, which is directly relevant to heterogeneous catalysis and global warming, and the development of advanced diagnostic tools for probing such processes.
-    </p>
+  <p>
+    My research is divided into two areas: CO₂ dissociation on metal surfaces and development of advanced diagnostic tools.
+  </p>
 
-    <h3>Does CO₂ Dissociate on Low-Index Copper Surfaces?</h3>
+  <h3>Does CO₂ Dissociate on Low-Index Copper Surfaces?</h3>
 
-    <div class="research-flex">
-        <div class="figure">
-            <img src="mol_surface_interaction.png" class="hero">
-            <div class="caption">Figure: Schematic of molecule–surface interaction during scattering and dissociation.</div>
-        </div>
+  <div class="research-flex">
+    <img src="mol_surface_interaction.png" class="hero">
 
-        <div>
-        This work investigates whether CO₂ can directly dissociate on low-index Cu surfaces under ultra-high vacuum conditions. The study focuses on the dependence of reaction probability on incident energy, molecular orientation, and vibrational excitation.
-        <br><br>
-        These findings are highly relevant for heterogeneous catalysis and CO₂ activation, key challenges in mitigating global warming. The results indicate a direct dissociation mechanism with minimal surface temperature dependence.
-        </div>
+    <div>
+      Study of CO₂ dissociation on Cu surfaces under UHV conditions.
+      Focus on incident energy, molecular orientation, and vibrational effects.
+      Important for heterogeneous catalysis and CO₂ reduction.
+    </div>
+  </div>
+
+  <h3>Development of Diagnostic Techniques</h3>
+
+  <div class="highlight-grid">
+
+    <div class="highlight-card">
+      <img src="wavemeter.png">
+      <div>
+        <h4>Wavemeter</h4>
+        <p>Fizeau interferometer-based high precision wavemeter.</p>
+        <div class="pub-link"><a href="#">Publication Link</a></div>
+      </div>
     </div>
 
-    <h3>Development of Diagnostic Techniques and Methods</h3>
+    <div class="highlight-card">
+      <img src="he_ne_laser.png">
+      <div>
+        <h4>Ultra-stable Laser</h4>
+        <p>ppb stabilized He–Ne laser using feedback control.</p>
+        <div class="pub-link"><a href="#">Publication Link</a></div>
+      </div>
+    </div>
 
-    <ul>
-        <li><b>Wavemeter:</b> Developed a low-cost, high-precision wavemeter based on a Fizeau interferometer.</li>
-        <li><b>Ultra-stable laser:</b> Built a ppb-stabilized He–Ne laser using feedback electronics.</li>
-        <li><b>Transfer interferometer:</b> Demonstrated MHz-level laser stabilization.</li>
-        <li><b>Spectrometer:</b> Designed a compact, high-sensitivity spectrometer for wavelength and Raman measurements.</li>
-        <li><b>Photoacoustic spectroscopy:</b> Developed high-sensitivity detection for weak transitions.</li>
-        <li><b>Imaging tools:</b> Designed velocity-map and spatial imaging systems for scattering studies.</li>
-        <li><b>Helium source:</b> Built a compact, high-flux beam for real-time surface monitoring.</li>
-    </ul>
+    <div class="highlight-card">
+      <img src="interferometer.png">
+      <div>
+        <h4>Transfer Interferometer</h4>
+        <p>MHz-level laser stabilization system.</p>
+        <div class="pub-link"><a href="#">Publication Link</a></div>
+      </div>
+    </div>
 
+    <div class="highlight-card">
+      <img src="spectrometer.png">
+      <div>
+        <h4>Spectrometer</h4>
+        <p>High sensitivity compact spectrometer.</p>
+        <div class="pub-link"><a href="#">Publication Link</a></div>
+      </div>
+    </div>
+
+    <div class="highlight-card">
+      <img src="photoacoustic.png">
+      <div>
+        <h4>Photoacoustic Spectroscopy</h4>
+        <p>Detection of weak gas-phase transitions.</p>
+        <div class="pub-link"><a href="#">Publication Link</a></div>
+      </div>
+    </div>
+
+    <div class="highlight-card">
+      <img src="vmi.png">
+      <div>
+        <h4>Imaging Tools</h4>
+        <p>Velocity-map and spatial imaging systems.</p>
+        <div class="pub-link"><a href="#">Publication Link</a></div>
+      </div>
+    </div>
+
+    <div class="highlight-card">
+      <img src="helium_source.png">
+      <div>
+        <h4>Helium Source</h4>
+        <p>Compact beam source for surface monitoring.</p>
+        <div class="pub-link"><a href="#">Publication Link</a></div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
+<!-- PUBLICATIONS -->
 <div class="container" id="publications">
-    <h2>Publications</h2>
-    <p><a href="Publication_list.pdf" target="_blank">Download Publications (PDF)</a></p>
+  <h2>Publications</h2>
+  <p><a class="button" href="Publication_list.pdf">⬇ Download Full List</a></p>
 </div>
 
+<!-- CV -->
 <div class="container" id="cv">
-    <h2>Curriculum Vitae</h2>
-    <a href="Saurabh_CV_2025.pdf" target="_blank" class="button">⬇ Download CV</a>
+  <h2>Curriculum Vitae</h2>
+  <a class="button" href="Saurabh_CV_2025.pdf">⬇ Download CV</a>
 </div>
 
-<div class="container">
-    <h2>Research Highlights</h2>
-    <span class="badge">CO₂ Dissociation</span>
-    <span class="badge">Surface Dynamics</span>
-    <span class="badge">REMPI</span>
-    <span class="badge">AES</span>
-    <span class="badge">VMI</span>
-</div>
-
+<!-- CONTACT -->
 <div class="container" id="contact">
-    <h2>Curriculum Vitae</h2>
-    <p><a href="Saurabh_CV_2025.pdf" target="_blank">Download CV (PDF)</a></p>
-</div>
-
-<div class="container" id="contact">
-    <h2>Contact</h2>
-    <p>Email: s.k.singh@swansea.ac.uk</p>
+  <h2>Contact</h2>
+  <p>Email: s.k.singh@swansea.ac.uk</p>
 </div>
 
 </body>
