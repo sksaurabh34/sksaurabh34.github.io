@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Saurabh Kumar Singh — Research Profile</title>
+<title>Saurabh Kumar Singh — Research & R&D Profile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -19,6 +19,18 @@ header {
   color: white;
   padding: 2rem;
   text-align: center;
+}
+
+.verified {
+  color: #1da1f2;
+  margin-left: 8px;
+}
+
+.headline {
+  max-width: 900px;
+  margin: 10px auto;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* NAV */
@@ -44,7 +56,6 @@ nav a {
   border-radius: 10px;
 }
 
-/* HEADINGS */
 h2 { color: #002147; }
 h3 { color: #003366; margin-top: 2rem; }
 
@@ -55,7 +66,7 @@ h3 { color: #003366; margin-top: 2rem; }
   align-items: center;
 }
 
-/* PROFILE IMAGE */
+/* PROFILE */
 .profile-photo {
   width: 180px;
   height: 180px;
@@ -64,83 +75,74 @@ h3 { color: #003366; margin-top: 2rem; }
   border: 4px solid #003366;
 }
 
-/* HERO IMAGE */
+/* HERO */
 img.hero {
   width: 450px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* IMPACT BOX */
+/* IMPACT */
 .impact-box {
   background: #eef4ff;
   padding: 15px;
   border-radius: 10px;
-  margin-top: 20px;
   border-left: 5px solid #003366;
+  margin-top: 20px;
 }
 
-/* ===== JOURNAL STYLE CARDS ===== */
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.skill-box {
+  background: #f9f9f9;
+  padding: 15px;
+  border-left: 4px solid #003366;
+  border-radius: 8px;
+}
+
+/* ACHIEVEMENTS */
+.achievements li {
+  margin-bottom: 8px;
+}
+
+/* CARDS */
 .highlight-grid {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 20px;
 }
 
 .highlight-card {
   display: flex;
   gap: 25px;
-  background: #fff;
   padding: 20px;
-  border-radius: 12px;
+  background: white;
+  border-radius: 10px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.08);
   align-items: center;
-  transition: 0.2s;
 }
 
-.highlight-card:hover {
-  transform: translateY(-3px);
-}
-
+.highlight-card iframe,
 .highlight-card img {
   width: 380px;
   height: 240px;
-  object-fit: cover;
   border-radius: 10px;
+  border: none;
 }
 
-.highlight-card h4 {
-  margin: 0;
-  color: #002147;
-}
-
-/* PUB LINK */
 .pub-link {
-  display: inline-block;
-  margin-top: 8px;
   color: #003366;
   font-weight: bold;
-  font-size: 0.85rem;
   text-decoration: none;
-}
-
-.pub-link:hover {
-  text-decoration: underline;
-}
-
-/* PUBLICATIONS */
-.pub-list p {
-  padding: 10px;
-  border-left: 4px solid #003366;
-  background: #f9f9f9;
-  margin-bottom: 10px;
 }
 
 /* TIMELINE */
 .timeline {
   border-left: 3px solid #003366;
-  margin-top: 20px;
   padding-left: 20px;
 }
 
@@ -162,12 +164,11 @@ img.hero {
 
 /* BUTTON */
 .button {
-  display: inline-block;
   padding: 10px 18px;
   background: #003366;
   color: white;
-  border-radius: 6px;
   text-decoration: none;
+  border-radius: 6px;
 }
 
 /* MOBILE */
@@ -177,31 +178,33 @@ img.hero {
     text-align: center;
   }
 
-  img.hero {
-    width: 80%;
-  }
-
+  img.hero,
+  .highlight-card iframe,
   .highlight-card img {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-  <h1>Saurabh Kumar Singh</h1>
-  <p>Postdoctoral Researcher · Surface Dynamics Lab · Swansea University</p>
+  <h1>Saurabh Kumar Singh <span class="verified">✔</span></h1>
+
+  <p class="headline">
+    Postdoctoral Researcher → R&D Scientist (Instrumentation, Optics & Photonics) <br>
+    Molecular Beam Surface Scattering • Laser Spectroscopy • Ion Optics (VMI & Imaging) • 
+    UHV Systems • High-Precision Measurement Tools • SIMION • LabVIEW • Python • MATLAB
+  </p>
 </header>
 
 <nav>
   <a href="#about">About</a>
+  <a href="#skills">Skills</a>
   <a href="#research">Research</a>
   <a href="#publications">Publications</a>
-  <a href="#cv">CV</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -212,11 +215,36 @@ img.hero {
     <div>
       <h2>About Me</h2>
       <p>
-        Postdoctoral researcher working on molecular scattering, surface reaction dynamics,
-        and development of advanced scientific instrumentation.
+        Experimental physicist specialising in surface dynamics, spectroscopy, and precision instrumentation.
+        Strong focus on translating fundamental research into real-world measurement technologies.
       </p>
     </div>
   </div>
+</div>
+
+<!-- SKILLS -->
+<div class="container" id="skills">
+  <h2>Core Competencies</h2>
+
+  <div class="skills-grid">
+    <div class="skill-box"><b>Instrumentation</b><br>High-precision tools & diagnostics</div>
+    <div class="skill-box"><b>Optics & Photonics</b><br>Laser systems, interferometry</div>
+    <div class="skill-box"><b>Ion Optics</b><br>VMI, TOF-MS, SIMION</div>
+    <div class="skill-box"><b>Vacuum Systems</b><br>UHV design & surface prep</div>
+    <div class="skill-box"><b>Spectroscopy</b><br>REMPI, photoacoustic</div>
+    <div class="skill-box"><b>Programming</b><br>LabVIEW, Python, MATLAB</div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="container">
+  <h2>Key Achievements</h2>
+  <ul class="achievements">
+    <li>ppb-level stabilized He–Ne laser</li>
+    <li>Patented low-cost wavemeter</li>
+    <li>Measured CO₂ dissociation down to 10⁻⁵</li>
+    <li>Developed high-sensitivity spectroscopy tools</li>
+  </ul>
 </div>
 
 <!-- RESEARCH -->
@@ -224,50 +252,24 @@ img.hero {
 
   <h2>Research Overview</h2>
 
-  <div class="research-flex">
-    <img src="mol_surface_interaction.png" class="hero">
-    <div>
-      <p>
-        My research is divided into CO₂ dissociation on metal surfaces and development of advanced diagnostic tools.
-      </p>
-    </div>
-  </div>
-
-  <div class="impact-box">
-    <h3>Key Research Impact</h3>
-    <ul>
-      <li>Measured CO₂ dissociation probabilities down to 10⁻⁵</li>
-      <li>Identified energy-dependent surface reaction pathways</li>
-      <li>Developed MHz-level laser stabilization systems</li>
-      <li>Built compact diagnostic tools for surface science</li>
-    </ul>
-  </div>
-
-  <h3>Does CO₂ Dissociate on Low-Index Copper Surfaces?</h3>
-
+  <h3>CO₂ Dissociation on Copper Surfaces</h3>
   <div class="research-flex">
     <img src="Figure_TOC.png" class="hero">
     <div>
-      <p>
-        CO₂ dissociation on Cu surfaces under UHV conditions with strong dependence on incident energy, orientation, and vibrational excitation.
-      </p>
-
-      <p>
-        <a class="button" href="CO2_publication.pdf">📄 View Publication</a>
-      </p>
+      <p>Fundamental study of CO₂ dissociation mechanisms on Cu surfaces under UHV conditions.</p>
+      <a class="button" href="CO2_publication.pdf">View Publication</a>
     </div>
   </div>
 
-  <h3>Development of Diagnostic Techniques</h3>
+  <h3>Diagnostic Instrumentation</h3>
 
   <div class="highlight-grid">
 
     <div class="highlight-card">
-    <iframe src="wavemeter01.pdf" width="100%" height="400px"></iframe>
+      <iframe src="wavemeter01.pdf"></iframe>
       <div>
         <h4>Wavemeter</h4>
-        <p>Fizeau interferometer-based high-precision wavelength measurement system.</p>
-        <a class="pub-link" href="#">Publication Link</a>
+        <p>Fizeau interferometer-based system.</p>
       </div>
     </div>
 
@@ -275,99 +277,17 @@ img.hero {
       <img src="he_ne_laser.png">
       <div>
         <h4>Ultra-stable Laser</h4>
-        <p>ppb-stabilized He–Ne laser using feedback control electronics.</p>
-        <a class="pub-link" href="#">Publication Link</a>
+        <p>ppb stabilized system.</p>
       </div>
     </div>
 
-    <div class="highlight-card">
-      <img src="interferometer.png">
-      <div>
-        <h4>Transfer Interferometer</h4>
-        <p>MHz-level laser stabilization using interferometric feedback systems.</p>
-        <a class="pub-link" href="#">Publication Link</a>
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <img src="spectrometer.png">
-      <div>
-        <h4>Spectrometer</h4>
-        <p>Compact high-resolution spectrometer for wavelength and Raman measurements.</p>
-        <a class="pub-link" href="#">Publication Link</a>
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <img src="photoacoustic.png">
-      <div>
-        <h4>Photoacoustic Spectroscopy</h4>
-        <p>Ultra-sensitive detection of weak gas-phase transitions.</p>
-        <a class="pub-link" href="#">Publication Link</a>
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <img src="vmi.png">
-      <div>
-        <h4>Imaging Tools</h4>
-        <p>Velocity-map and spatial imaging systems for scattering studies.</p>
-        <a class="pub-link" href="#">Publication Link</a>
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <img src="helium_source.png">
-      <div>
-        <h4>Helium Beam Source</h4>
-        <p>Compact high-flux beam source for surface monitoring.</p>
-        <a class="pub-link" href="#">Publication Link</a>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- TIMELINE -->
-<div class="container">
-  <h2>Research Timeline</h2>
-
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Postdoctoral Research</h3>
-      <p>Molecule–surface scattering and stereodynamics.</p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>PhD Research</h3>
-      <p>CO₂ dissociation on Cu surfaces and reaction dynamics.</p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Instrumentation Development</h3>
-      <p>Laser systems, spectroscopy tools, and beam sources.</p>
-    </div>
   </div>
 </div>
 
 <!-- PUBLICATIONS -->
 <div class="container" id="publications">
-  <h2>Selected Publications</h2>
-
-  <div class="pub-list">
-    <p><b>CO₂ dissociation on Cu surfaces</b><br><a href="#">DOI Link</a></p>
-    <p><b>Surface scattering dynamics</b><br><a href="#">DOI Link</a></p>
-    <p><b>Laser stabilization systems</b><br><a href="#">DOI Link</a></p>
-  </div>
-
-  <a class="button" href="Publication_list.pdf">⬇ Full Publication List</a>
-</div>
-
-<!-- CV -->
-<div class="container" id="cv">
-  <h2>Curriculum Vitae</h2>
-  <a class="button" href="Saurabh_CV_2025.pdf">⬇ Download CV</a>
+  <h2>Publications</h2>
+  <a class="button" href="Publication_list.pdf">Download Full List</a>
 </div>
 
 <!-- CONTACT -->
